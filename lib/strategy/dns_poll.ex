@@ -81,7 +81,7 @@ defmodule Cluster.Strategy.DNSPoll do
     # reschedule a call to itself in poll_interval ms
     Process.send_after(self(), :poll, poll_interval)
 
-    %{state | meta: {poll_interval, query, node_sname, nodes}}
+    %{state | meta: {poll_interval, query, node_sname}}
   end
 
   # turn an ip into a node name atom, assuming that all other node names looks similar to our own name
